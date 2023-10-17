@@ -10,7 +10,7 @@ const Header = () => {
     <div className="gap-2 md:flex  flex-row">
     <li className="text-xl"> <NavLink  to='/' className={({isActive , isPending})=> isPending? 'pending' : isActive? 'text-green-400 underline ': ''}>Home</NavLink> </li>
     {
-      user?  <li className="text-xl"> <NavLink  to='/booked' className={({isActive , isPending})=> isPending? 'pending' : isActive? 'text-green-400 underline ': ''}>Add Cart</NavLink> </li>: <li className="text-xl"> <Link  to='/login' >Add Cart</Link> </li>
+      user?  <li className="text-xl"> <NavLink  to='/addedcart' className={({isActive , isPending})=> isPending? 'pending' : isActive? 'text-green-400 underline ': ''}>Add Cart</NavLink> </li>: <li className="text-xl"> <Link  to='/login' >Add Product</Link> </li>
     }
     {
       user?   <li className="text-xl"> <NavLink  to='/about' className={({isActive , isPending})=> isPending? 'pending' : isActive? 'text-green-400 underline ': ''}>My Cart</NavLink> </li>:<li className="text-xl"> <Link   to='/login' >My Cart</Link> </li>

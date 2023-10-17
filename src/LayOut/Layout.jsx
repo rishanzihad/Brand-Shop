@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 
 const Layout = () => {
     return (
-        <div>
+        <div className="max-w-[1400px] mx-auto">
             <Header></Header>
             <Outlet></Outlet>
 

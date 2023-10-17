@@ -15,7 +15,7 @@ const Login = () => {
       .then(res=>{
        
          toast.success('User Log In Successfully')
-          navigate('/')
+         navigate(location?.state? location.state:'/')
       })
     .catch(error =>toast.error(error.message))
   }

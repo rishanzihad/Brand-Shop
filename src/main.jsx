@@ -24,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/addedcart',
+        element:<PrivateRoute><AddedCart></AddedCart></PrivateRoute>
       }
     ]
   },
@@ -35,6 +39,8 @@ import Layout from './LayOut/Layout';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import AddedCart from './Pages/Added Cart/AddedCart';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
