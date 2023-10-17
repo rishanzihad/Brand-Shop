@@ -3,7 +3,7 @@ import { GoogleAuthProvider,  createUserWithEmailAndPassword,  getAuth, onAuthSt
 import app from "../Firebase/Firebase.config";
 export const AuthContext =createContext(null)
 const auth = getAuth(app)
-const googleLogin =new GoogleAuthProvider
+const googleProvider =new GoogleAuthProvider
 const AuthProvider = ({children}) => {
 
     
@@ -12,7 +12,7 @@ const AuthProvider = ({children}) => {
     const [loading,setLoading] =useState(true)
     const googleLogin=()=>{
         setLoading(true)
-       return signInWithPopup(auth,googleLogin)
+       return signInWithPopup(auth,googleProvider)
     }
 
     const register =(email,password)=>{
