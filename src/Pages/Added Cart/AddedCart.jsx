@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 
 const AddedCart = () => {
     const handleAddedProduct = e => {
@@ -10,10 +11,11 @@ const AddedCart = () => {
         const type = form.type.value
         const description = form.description.value
         const rating = form.rating.value
+
         const addedProduct = {
-            photo, name, brand, price, description, rating, type
+            photo, name, price, description, brand, type,rating
         }
-        console.log(addedProduct)
+        
         fetch('http://localhost:4005/products', {
             method: "POST",
             headers: {
@@ -21,8 +23,12 @@ const AddedCart = () => {
             },
             body: JSON.stringify(addedProduct)
         })
-            .then(res => res.json())
-            .then(data => console.log(data))
+            .then(res =>  res.json())
+            .then(data =>  console.log(data))
+            
+            toast.success('Product Successfully')
+            form.reset()
+            
     }
 
     return (
@@ -51,13 +57,13 @@ const AddedCart = () => {
                                 <label className="label">
                                     <span className="label-text">Brand Name</span>
                                 </label>
-                                <select name="type" className="input input-bordered" required>
-                                    <option value="option1">Apple</option>
-                                    <option value="option2">Google</option>
-                                    <option value="option3">One PLus</option>
-                                    <option value="option4">Samsung</option>
-                                    <option value="option5">Sony</option>
-                                    <option value="option6">Intel</option>
+                                <select name="brand" className="input input-bordered" required>
+                                    <option value="apple">Apple</option>
+                                    <option value="google">Google</option>
+                                    <option value="oneplus">One PLus</option>
+                                    <option value="samsung">Samsung</option>
+                                    <option value="sony">Sony</option>
+                                    <option value="intel">Intel</option>
                                 </select>
                             </div>
                             <div className="form-control">
@@ -65,12 +71,15 @@ const AddedCart = () => {
                                     <span className="label-text">Type</span>
                                 </label>
                                 <select name="type" className="input input-bordered" required>
-                                    <option value="option1">Phone</option>
-                                    <option value="option2">Computer</option>
-                                    <option value="option3">Head Phone</option>
-                                    <option value="option4">Watch</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="Computer">Computer</option>
+                                    <option value="HeadPhone">HeadPhone</option>
+                                    <option value="Watch">Watch</option>
+
                                 </select>
                             </div>
+
+
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Price</span>
@@ -87,18 +96,8 @@ const AddedCart = () => {
                                 <label className="label">
                                     <span className="label-text">Rating</span>
                                 </label>
-                                <input
-                                    type="number"
-                                    placeholder="Rating"
-                                    name="rating"
-                                    className="input input-bordered"
-                                    required
-                                    min="1"
-                                    max="5"
-                                    step="0.1"
-                                />
+                                <input type="text" placeholder="Short Description" name="rating" className="input input-bordered" required />
                             </div>
-
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Add</button>
                             </div>

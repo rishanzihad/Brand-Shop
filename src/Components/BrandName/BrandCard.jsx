@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const BrandCard = ({brand}) => {
@@ -7,15 +8,13 @@ const BrandCard = ({brand}) => {
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
-        <figure className="px-10 w-full pt-10">
+        <figure className=" w-full ">
           <img src={Image} alt="Shoes" className="rounded-xl w-full h-72" />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">{brandName}</h2>
-
-          <div className="card-actions">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
+          
+          <Link className="btn btn-secondary-full" to={`/products/${brandName}`}> {brandName}</Link>
+          
         </div>
       </div>
         </div>
