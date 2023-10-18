@@ -34,7 +34,8 @@ const Header = () => {
                       {links}
                   </ul>
               </div>
-              <Link to='/' className="btn btn-ghost font-bold normal-case text-3xl">Technology And Electronics</Link>
+              <img src="https://i.ibb.co/Q8x7YJf/OSO1XY0.jpg" className="max-h-[35px]" alt="" />
+              <Link to='/' className="btn btn-ghost font-bold normal-case text-lg md:text-3xl">Technology And Electronics</Link>
           </div>
           <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">

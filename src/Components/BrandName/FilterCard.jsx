@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 
 const FilterCard = ({product}) => {
 
@@ -44,12 +46,14 @@ const FilterCard = ({product}) => {
         </div>
         
         <div className="p-6 pt-0">
-          <button
+          <Link to={`/update/${_id}`}>
+          <button 
             className="block bg-black w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
           >
            Update
           </button>
+          </Link>
         </div>
       </div>
       
