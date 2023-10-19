@@ -24,10 +24,16 @@ const AddedCart = () => {
             body: JSON.stringify(addedProduct)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged){
+                    toast.success('Product Added Successfully')
+                    form.reset()
+                }
+            })
 
-        toast.success('Product Successfully')
-        form.reset()
+        
+
 
     }
 

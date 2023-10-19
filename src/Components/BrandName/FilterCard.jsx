@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const FilterCard = ({ product }) => {
 
-  const { _id, name, photo, price, description, brand, type, rating } = product
+  const { _id, name, photo, price,  brand, type, rating } = product
 
   const ratingStars = Array.from({ length: rating }, (_, index) => (
     <span key={index} className="text-yellow-500">★</span>
@@ -20,7 +20,7 @@ const FilterCard = ({ product }) => {
       <div className="relative mx-4 mt-4 flex-1 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
         <img
           src={photo}
-          className="object-cover w-full h-[400px]"
+          className="object-cover w-full h-full "
         />
       </div>
       <div className="p-6">
