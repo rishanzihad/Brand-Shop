@@ -73,8 +73,9 @@ const AddedCart = () => {
                                 <select name="type" className="input input-bordered" required>
                                     <option value="Phone">Phone</option>
                                     <option value="Computer">Computer</option>
-                                    <option value="HeadPhone">HeadPhone</option>
+                                    <option value="HeadPhone">Airpod</option>
                                     <option value="Watch">Watch</option>
+                                    <option value="Ipad">Ipad</option>
 
                                 </select>
                             </div>

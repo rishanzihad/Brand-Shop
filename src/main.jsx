@@ -36,6 +36,12 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:4005/products/${params.id}`)
       },
       {
+        path:'/details/:id',
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+        loader:()=>fetch('http://localhost:4005/products')
+        
+    },
+      {
         path:'/products/:brandName',
         element:<PrivateRoute> <FilterProduct></FilterProduct>  </PrivateRoute>,
         loader:()=>fetch("http://localhost:4005/products")
@@ -54,6 +60,7 @@ import AddedCart from './Pages/Added Cart/AddedCart';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import FilterProduct from './Components/BrandName/FilterProduct';
 import UpdateCart from './Pages/UpdateCart/UpdateCart';
+import Details from './Pages/Details/Details';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
