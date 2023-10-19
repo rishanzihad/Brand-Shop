@@ -6,12 +6,21 @@ import { Link } from "react-router-dom";
 const FilterCard = ({product}) => {
 
     const {_id,name,photo,price,description,brand,type,rating}=product
+
+    const ratingStars = Array.from({ length: rating }, (_, index) => (
+      <span key={index} className="text-yellow-500">★</span>
+    ));
+  
+
+    const emptyStars = Array.from({ length: 5 - rating }, (_, index) => (
+      <span key={rating + index} className="text-yellow-300">☆</span>
+    ));
     return (
         <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
-        <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
+        <div className="relative mx-4 mt-4 flex-1 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
           <img
             src={photo}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-[400px]"
           />
         </div>
         <div className="p-6">
@@ -29,9 +38,10 @@ const FilterCard = ({product}) => {
           <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
           {description}
           </p>
-          <p className="block font-sans text-base antialiased font-bold leading-relaxed text-blue-gray-900" >
-          {rating}
-          </p>
+          <div className="block mt-2 font-sans text-base antialiased font-bold leading-relaxed text-blue-gray-900">
+          {ratingStars}
+          {emptyStars}
+        </div>
           <p className="block font-sans text-base antialiased font-bold leading-relaxed text-blue-gray-900">
           {type}
           </p>

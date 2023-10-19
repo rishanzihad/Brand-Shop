@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import { Navigate, useLoaderData } from 'react-router-dom';
 
 const UpdateCart = () => {
     const singleProduct =useLoaderData()
@@ -26,7 +26,7 @@ const UpdateCart = () => {
         fetch(`http://localhost:4005/products/${singleProduct._id}`,{
             method:"PUT",
             headers:{
-                'content-type':"application.json"
+                'content-type':"application/json"
             },
             body:JSON.stringify(UpdateProduct)
         })
@@ -35,6 +35,7 @@ const UpdateCart = () => {
             console.log(data)
             if(data.modifiedCount>0){
             toast.success('Update Successful')
+            Navigate('/')
         }})
         
         

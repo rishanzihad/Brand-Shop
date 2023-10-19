@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 
@@ -11,9 +12,9 @@ const BrandCard = ({brand}) => {
         <figure className=" w-full ">
           <img src={Image} alt="Shoes" className="rounded-xl w-full h-72" />
         </figure>
-        <div className="card-body items-center text-center">
+        <div className="  p-5  items-center text-center">
           
-          <Link className="btn btn-secondary-full" to={`/products/${brandName}`}> {brandName}</Link>
+          <Link className="btn w-full btn-secondary-full" to={`/products/${brandName}`}> {brandName}</Link>
           
         </div>
       </div>

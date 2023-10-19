@@ -13,9 +13,9 @@ const AddedCart = () => {
         const rating = form.rating.value
 
         const addedProduct = {
-            photo, name, price, description, brand, type,rating
+            photo, name, price, description, brand, type, rating
         }
-        
+
         fetch('http://localhost:4005/products', {
             method: "POST",
             headers: {
@@ -23,12 +23,12 @@ const AddedCart = () => {
             },
             body: JSON.stringify(addedProduct)
         })
-            .then(res =>  res.json())
-            .then(data =>  console.log(data))
-            
-            toast.success('Product Successfully')
-            form.reset()
-            
+            .then(res => res.json())
+            .then(data => console.log(data))
+
+        toast.success('Product Successfully')
+        form.reset()
+
     }
 
     return (
@@ -96,7 +96,15 @@ const AddedCart = () => {
                                 <label className="label">
                                     <span className="label-text">Rating</span>
                                 </label>
-                                <input type="text" placeholder="Short Description" name="rating" className="input input-bordered" required />
+                                <input
+                                    type="number"
+                                    min="1"
+                                    max="5"
+                                    placeholder="Rating"
+                                    name="rating"
+                                    className="input input-bordered"
+                                    required
+                                />
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Add</button>

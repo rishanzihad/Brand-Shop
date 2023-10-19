@@ -1,33 +1,37 @@
 [
+
+
+
+
     {
       "id": 1,
       "brandName": "Apple",
-      "Image": "https://i.ibb.co/7zbZLXC/images-2.png"
+      "Image": "https://i.ibb.co/K9FgMdm/zhiyue-7-DOU5-Nl-NIc-E-unsplash.jpg"
     },
     {
       "id": 2,
       "brandName": "Samsung",
-      "Image": "https://i.ibb.co/GsDCp7D/images.jpg"
+      "Image": "https://i.ibb.co/m0YMxMD/HD-wallpaper-samsung-carbon-logo-grunge-art-carbon-background-creative-samsung-black-logo-samsung-lo.jpg"
     },
     {
       "id": 3,
       "brandName": "Sony",
-      "Image": "https://i.ibb.co/8m4D23M/images-4.png"
+      "Image": "https://i.ibb.co/jbdc61T/85196.jpg"
     },
     {
       "id": 4,
       "brandName": "Google",
-      "Image": "https://i.ibb.co/vXDb5XS/images-3.png"
+      "Image": "https://i.ibb.co/8gQBrms/839003.jpg"
     },
     {
       "id": 5,
       "brandName": "Intel",
-      "Image": "https://i.ibb.co/9TDw3BQ/images-2.jpg"
+      "Image": "https://i.ibb.co/pZkMLmS/wallpaperflare-com-wallpaper.jpg"
     },
     {
       "id": 6,
       "brandName": "OnePlus",
-      "Image": "https://i.ibb.co/p4VdQyT/images.png"
+      "Image": "https://i.ibb.co/PjYwB4J/HD-wallpaper-one-plus-gold-one-plus-logo-1.jpg"
     }
   ]
   
