@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const BrandCard = ({brand}) => {
    
-    const {brandName,Image}=brand
-    
+    const {Image,brandName}=brand
+
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -14,7 +14,7 @@ const BrandCard = ({brand}) => {
         </figure>
         <div className="  p-5  items-center text-center">
           
-          <Link className="btn w-full btn-secondary-full" to={`/products/${brandName}`}> {brandName}</Link>
+          <Link  className="btn w-full btn-secondary-full" to={`/products/${brandName}`}> {brandName}</Link>
           
         </div>
       </div>

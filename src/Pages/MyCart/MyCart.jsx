@@ -1,25 +1,39 @@
 import { useLoaderData } from "react-router-dom";
 import OneCart from "./OneCart";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const MyCart = () => {
     const myCart =useLoaderData()
-   
-    const [noAddCart, setNoAddCart] =useState(false)
-    
-    if(myCart.length<0){
+    const {user}=useContext(AuthContext)
+
+    const [haveProduct, setHaveProduct] = useState(myCart)
+    const email=user.email
+
+    useEffect(()=>{
+        const filterAddCart =haveProduct && haveProduct?.filter(product => product.email == email.toLowerCase())
+       
             
-         return setNoAddCart('No Data Found')
+            setHaveProduct(filterAddCart)
+       
         
-    }
+        
+        
+       
+    },[email])
+    //if(myCart.length<0){
+            
+       //  return setNoAddCart('No Data Found')
+        
+    //}
    
    
     return (
-        noAddCart ? <p className="h-[50vh] flex justify-center items-center">{noAddCart}</p>:
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-5">
             {
-                myCart.map(cart=><OneCart key={cart._id} cart={cart}></OneCart>)
+                haveProduct.map(cart=><OneCart key={cart._id} cart={cart}></OneCart>)
             }
         </div>
     );

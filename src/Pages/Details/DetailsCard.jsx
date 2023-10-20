@@ -1,12 +1,17 @@
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useContext } from "react";
 
 
 
 const DetailsCard = ({product}) => {
   const navigate =useNavigate()
+  const {user}=useContext(AuthContext)
+  
     const {description,photo,name,price,type,brand}=product
     const addProduct ={
+      email:user.email,
       photo:product.photo,
        name:product.name,
        price:product.price , 
@@ -15,7 +20,7 @@ const DetailsCard = ({product}) => {
         type:product.type, 
         rating:product.rating
     }
-    console.log(addProduct)
+    
     const handleAddCart=()=>{
       fetch('http://localhost:4005/carts', {
             method: "POST",

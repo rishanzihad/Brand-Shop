@@ -4,10 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Technology and Electronics</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="/src/light-theme.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div>
+      <label class="theme-toggle">
+        <input type="checkbox" checked id="theme-toggle" class="toggle absolute top-6 lg:top-7 right-[155px] md:right-20">
+      </label>
+      <div id="root"></div>
+    </div>
+    
     <script type="module" src="/src/main.jsx"></script>
+    <script src="src/Toggle.js"></script>
   </body>
 </html>

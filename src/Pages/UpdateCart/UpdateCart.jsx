@@ -1,10 +1,11 @@
 
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Navigate, useLoaderData } from 'react-router-dom';
+import {  useLoaderData, useNavigate } from 'react-router-dom';
 
 const UpdateCart = () => {
     const singleProduct =useLoaderData()
+    const navigate =useNavigate()
     const [singlProduct,setSinglProduct]=useState(singleProduct)
     useEffect(()=>{
         setSinglProduct(singleProduct)
@@ -35,7 +36,7 @@ const UpdateCart = () => {
             console.log(data)
             if(data.modifiedCount>0){
             toast.success('Update Successful')
-            Navigate('/')
+            navigate('/')
         }})
         
         
