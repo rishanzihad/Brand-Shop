@@ -1,4 +1,4 @@
-## [ Client Side Private repo](https://future-oil.surge.sh/mycart)
+## [ Client Side Live Link](https://future-oil.surge.sh/mycart)
 
 •Unique Website Design and Concept:
 The project aims to create a unique website for a specific category, "Technology and Electronics."

@@ -17,10 +17,10 @@ const FilterCard = ({ product }) => {
   ));
   return (
     <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
-      <div className="relative mx-4 mt-4 flex-1 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
+      <div className="relative mx-4 mt-4 flex-1 overflow-hidden text-gray-700 bg-white  rounded-xl bg-clip-border">
         <img
           src={photo}
-          className="object-cover w-full h-full "
+          className="object-cover w-full h-[400px]"
         />
       </div>
       <div className="p-6">
