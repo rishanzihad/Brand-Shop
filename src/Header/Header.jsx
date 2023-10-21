@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Toggle from "../Toggle";
 
 
 
@@ -40,6 +41,7 @@ const Header = () => {
                     <img src="https://i.ibb.co/Q8x7YJf/OSO1XY0.jpg" className="max-h-[35px]" alt="" />
                     <Link to='/' className="btn btn-ghost font-bold normal-case text-s md:text-3xl">Technology And Electronics</Link>
                 </div>
+                <div className="ml-48 md:ml-64"><Toggle></Toggle></div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {links}

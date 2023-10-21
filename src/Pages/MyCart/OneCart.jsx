@@ -3,14 +3,15 @@ import { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 
 const OneCart = ({ cart }) => {
 
     const [haveProduct, setHaveProduct] = useState(cart)
-
-
     const { _id, name, photo, price, brand, type, rating } = haveProduct
+    const navigate=useNavigate()
+ 
 
     const handleDelete = (_id) => {
 
@@ -32,6 +33,7 @@ const OneCart = ({ cart }) => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
+                        navigate('/')
                         toast.success('Delete Successful')
                         // if (data.deletedCount > 0) {
                         // const remaining = haveProduct.filter(item => item._id !== _id);
