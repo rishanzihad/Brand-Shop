@@ -1,6 +1,8 @@
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddedCart = () => {
+    const navigate =useNavigate()
     const handleAddedProduct = e => {
         e.preventDefault()
         const form = e.target
@@ -16,7 +18,7 @@ const AddedCart = () => {
             photo, name, price, description, brand, type, rating
         }
 
-        fetch('http://localhost:4005/products', {
+        fetch('https://tech-server-sand.vercel.app/products', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,13 +28,14 @@ const AddedCart = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.acknowledged){
+                if (data.acknowledged) {
                     toast.success('Product Added Successfully')
                     form.reset()
+                    navigate('/')
                 }
             })
 
-        
+
 
 
     }
@@ -78,9 +81,9 @@ const AddedCart = () => {
                                 </label>
                                 <select name="type" className="input input-bordered" required>
                                     <option value="Phone">Phone</option>
-                                    <option value="Computer">Computer</option>
-                                    <option value="HeadPhone">Airpod</option>
-                                    <option value="Watch">Watch</option>
+                                    <option value="Leptop">Leptop</option>
+                                    <option value="Headphone">HeadPhone</option>
+                                    <option value="Camera">Camera</option>
                                     <option value="Ipad">Ipad</option>
 
                                 </select>

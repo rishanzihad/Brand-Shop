@@ -33,25 +33,26 @@ const router = createBrowserRouter([
       {
         path:'/mycart',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:()=>fetch('http://localhost:4005/carts')
+        loader:()=>fetch('https://tech-server-sand.vercel.app/carts')
       },
       {
         path:'//update/:id',
         element:<PrivateRoute><UpdateCart></UpdateCart></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:4005/products/${params.id}`)
+        loader:({params})=>fetch(`https://tech-server-sand.vercel.app/products/${params.id}`)
       },
       {
         path:'/details/:id',
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-        loader:()=>fetch('http://localhost:4005/products')
+        loader:()=>fetch('https://tech-server-sand.vercel.app/products')
         
     },
       {
         path:'/products/:brandName',
         element:<PrivateRoute> <FilterProduct></FilterProduct>  </PrivateRoute>,
-        loader:()=>fetch("http://localhost:4005/products"),
+        loader:()=>fetch("https://tech-server-sand.vercel.app/products"),
         
       },
+      
       
     ]
   },
@@ -69,6 +70,7 @@ import FilterProduct from './Components/BrandName/FilterProduct';
 import UpdateCart from './Pages/UpdateCart/UpdateCart';
 import Details from './Pages/Details/Details';
 import MyCart from './Pages/MyCart/MyCart';
+import AppleSlider from './Components/Slider/AppleSlider';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

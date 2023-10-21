@@ -22,7 +22,7 @@ const DetailsCard = ({product}) => {
     }
     
     const handleAddCart=()=>{
-      fetch('http://localhost:4005/carts', {
+      fetch(`https://tech-server-sand.vercel.app/carts`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

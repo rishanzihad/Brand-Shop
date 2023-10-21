@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import FilterCard from "./FilterCard";
+import AppleSlider from "../Slider/AppleSlider";
 
 
 
@@ -21,7 +22,7 @@ const FilterProduct = () => {
         }
         else{
            
-            setNoAddProduct('No Data Found')
+            setNoAddProduct('No Product Found')
         }
         
        
@@ -30,12 +31,16 @@ const FilterProduct = () => {
 
     return (
         noAddProduct ? <p className="h-[50vh] flex justify-center items-center">{noAddProduct}</p>:
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+       <div>
+        <AppleSlider></AppleSlider>
+        <h1 className="text-5xl font-bold text-center">Our Products</h1>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
            
            {
            product.map(product=> <FilterCard key={product._id} product={product}></FilterCard>)
            }
         </div>
+       </div>
     );
 };
 

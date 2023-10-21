@@ -10,6 +10,7 @@ const UpdateCart = () => {
     useEffect(()=>{
         setSinglProduct(singleProduct)
     },[])
+    console.log(singlProduct)
     const handleUpdateProduct = e => {
         e.preventDefault()
         const form = e.target
@@ -24,7 +25,8 @@ const UpdateCart = () => {
         const UpdateProduct = {
             photo, name, price, description, brand, type,rating
         }
-        fetch(`http://localhost:4005/products/${singleProduct._id}`,{
+        fetch(`https://tech-server-sand.vercel.app/products/${singleProduct._id}`,{
+
             method:"PUT",
             headers:{
                 'content-type':"application/json"
